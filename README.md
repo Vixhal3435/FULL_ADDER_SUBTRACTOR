@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/56425cb4-639d-4faf-b2bd-519cd82b67c2)# FULL_ADDER_SUBTRACTOR
+# FULL_ADDER_SUBTRACTOR
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
@@ -38,35 +38,87 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
-**Procedure**
+   FULL ADDER
 
-Write the detailed procedure here
+![Screenshot 2024-12-09 201848](https://github.com/user-attachments/assets/e9c69d2e-8803-4e5d-a517-0991e0b9f47f)
+
+
+   FULL SUBTRACTOR
+ ![Screenshot 2024-12-09 201856](https://github.com/user-attachments/assets/13a539e6-ae45-42f1-a054-952dfed71bfa)
+
+
+
+**Procedure**
+```
+1 Type the program in Quartus software.
+2 Compile and run the program.
+3 Generate the RTL schematic and save the logic diagram.
+4 Create the RTL schematic and save the logic diagram.
+5 For different input combinations generate the timing diagram.
+```
 
 **Program:**
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
-Developed by: VISHAL.V
-RegisterNumber:24900179
+
 */
-module full_add_sub(sum,cout,a,b,cin);
- output sum;
- output cout;
- input a;
- input b;
- input cin;
- wire W1,W2,W3;
- assign W1=a^b;
- assign W2=a&b;
- assign W3=W1&cin;
- assign sum=W1^cin;
- assign cout=W2|W3;
- endmodule
+```
+i)FULL ADDER
+
+module fa(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^c);
+assign carry= ( (a & b)| ( cin &(a ^ b ));
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b )));
+endmodule
+
+```
+
+
+Developed by: VISHAL.V
+
+
+RegisterNumber:24900179
+
 
 **RTL Schematic**
 
+   FULL ADDER
+
+
+![Screenshot 2024-12-09 201945](https://github.com/user-attachments/assets/8b792c2d-8bca-4553-b116-c9ac48862649)
+
+
+   FULL SUBTRACTOR
+
+
+![Screenshot 2024-12-09 201951](https://github.com/user-attachments/assets/6f2365bf-cdeb-46d4-a961-9bac567c8900)
+
+
+
+
 **Output Timing Waveform**
-![Screenshot 2024-12-03 215521](https://github.com/user-attachments/assets/8fbef102-1ad9-4510-9b7f-dfe336ad8b13)
-![Screenshot 2024-12-03 215548](https://github.com/user-attachments/assets/709ad805-8159-49c2-a898-8fd45ec020a3)
+
+   FULL ADDER
+
+![Screenshot 2024-12-09 202006](https://github.com/user-attachments/assets/7285a028-ab06-4009-851b-7aca9a0c7ecc)
+
+   FULL SUBTRACTOR
+
+
+![Screenshot 2024-12-09 203013](https://github.com/user-attachments/assets/ff5cb32d-66a6-4379-b010-20cf8550c105)
+
+
+
 
 **Result:**
 
